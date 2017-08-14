@@ -82,6 +82,7 @@ void ParticleFilter::dataAssociation(const std::vector<Map::single_landmark_s> &
 			double dist_t = dist(map[m].x_f,map[m].y_f,obs->x,obs->y);
 			if (dist_t < min) {
 				obs->id = m;
+				min = dist_t;
 			}
 		}
 	}
