@@ -78,8 +78,15 @@ public:
 	 * @param predicted Vector of predicted landmark observations
 	 * @param observations Vector of landmark observations
 	 */
-	void dataAssociation(std::vector<LandmarkObs> predicted, std::vector<LandmarkObs>& observations);
-	
+	void dataAssociation(const std::vector<Map::single_landmark_s> &map, std::vector<LandmarkObs>& observations);
+
+	/**
+	 * Convert obs coordinates to map space.
+	 * @param obs Observations to change coordinates
+	 * @param p Particle the observations are based on. 
+	 */
+	void coordToMap(std::vector<LandmarkObs> &obs, const Particle &p);
+
 	/**
 	 * updateWeights Updates the weights for each particle based on the likelihood of the 
 	 *   observed measurements. 
