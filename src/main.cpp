@@ -63,12 +63,7 @@ int main()
         
         if (event == "telemetry") {
           // j[1] is the data JSON object
-{
 
-			double sense_x = std::stod(j[1]["sense_x"].get<std::string>());
-			double sense_y = std::stod(j[1]["sense_y"].get<std::string>());
-			printf("gps %f,%f\n",sense_x,sense_y);
-}
 
           if (!pf.initialized()) {
 
